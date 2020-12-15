@@ -119,13 +119,17 @@
 
     async function main() {
       await liff.init({ liffId: "1655376447-YKAy0pmj" })
+      doccument.getElementById("isLoggedIn").append(liff.isLoggedIn())
+      if (liff.isLoggedIn()) {
       getEnvironment()
       getUserProfile()
       getContext()
       getFriendship()
+      }
       // createUniversalLink()
-    } else {
+      else {
       liff.login()
+      }
     }
     main()
   </script>
